@@ -1,0 +1,19 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: <%= ENV['MEE2U_DATABASE_USERNAME'] %>
+  password: <%= ENV['MEE2U_DATABASE_PASSWORD'] %>
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: mee2u_development
+
+test:
+  <<: *default
+  database: mee2u_test
+
+production:
+  <<: *default
+  database: mee2u_production
