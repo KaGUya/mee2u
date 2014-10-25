@@ -4,6 +4,7 @@ default: &default
   pool: 5
   username: <%= ENV['MEE2U_DATABASE_USERNAME'] %>
   password: <%= ENV['MEE2U_DATABASE_PASSWORD'] %>
+  host: <%= ENV['MEE2U_DATABASE_HOST'] %>
   socket: /tmp/mysql.sock
 
 development:
@@ -16,4 +17,4 @@ test:
 
 production:
   <<: *default
-  database: mee2u_production
+  database: <%= ENV['MEE2U_DATABASE_NAME'] %>
