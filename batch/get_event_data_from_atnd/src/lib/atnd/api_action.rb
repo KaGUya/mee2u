@@ -20,7 +20,7 @@ module Atnd
       raise ArgumentError, 'missing argument read_timeout' if !defined? read_timeout
 
       access_url  = @url
-      access_url += "?keyword_or=" + @keyword if @keyword != nil
+      access_url += "?keyword_or=" + @keyword if !@keyword.empty?
       access_url += "&count=" + @count.to_s + "&format=json"
       
       uri = URI.parse(access_url)
