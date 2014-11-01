@@ -1,10 +1,13 @@
 module Atnd
   
   class APIAction
+    require 'net/http'
+    require 'uri'
+    require 'json'
     require 'logger'
 
     def initialize(url,keyword,count=100)
-      raise ArgumentError, 'irregular url' if (!/^http(s)?:/.match(url))
+      raise ArgumentError, 'irregular url' if (!/^http(s)?:\/\/[a-z0-9.\/]+$/.match(url))
       #raise ArgumentError, 'irregular url' if (!/http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/.match(url))
       raise ArgumentError, 'irregular count' if (!count.is_a?(Numeric) or count < 0 or count > 100)
 

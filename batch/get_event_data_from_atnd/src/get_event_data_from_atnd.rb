@@ -4,9 +4,6 @@ require 'rubygems' unless defined?(gem)
 here = File.dirname(__FILE__)
 $LOAD_PATH << File.expand_path(File.join(here, 'lib'))
 
-require 'net/http'
-require 'uri'
-require 'json'
 require 'logger'
 
 require 'atnd/event_table_model'
