@@ -1,5 +1,4 @@
 require File.dirname(__FILE__) + '/spec_helper'
-include Atnd
 
 describe APIAction, 'when irregular argument' do
   it 'should throw ArgumentError' do

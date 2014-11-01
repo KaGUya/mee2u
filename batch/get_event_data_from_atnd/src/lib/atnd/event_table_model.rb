@@ -4,6 +4,8 @@ module Atnd
     require 'logger'
     require 'mysql2'
 
+    attr_reader :records
+
     def initialize(mysql_info)
       raise ArgumentError, 'irregular event_data' if mysql_info['hostname'].nil?
       raise ArgumentError, 'irregular event_data' if mysql_info['username'].nil?
